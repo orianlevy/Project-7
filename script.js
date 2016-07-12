@@ -20,7 +20,6 @@ window.onload = function() {
 
 	//Time
 	var current_time = document.getElementById('current-time');
-	var duration = document.getElementById('duration');
 
 
 	// Array of object for transcript text with start and finish
@@ -57,13 +56,13 @@ window.onload = function() {
 			video.play();
 
 			// Update the button text to 'Pause'
-			playButton.innerHTML = '<img src="icons/pause-icon.png"/>';;
+			playButton.innerHTML = '<img src="icons/pause-icon.png"/>';
 		} else {
 			// Pause the video
 			video.pause();
 
 			// Update the button text to 'Play'
-			playButton.innerHTML = '<img src="icons/play-icon.png"/>';;
+			playButton.innerHTML = '<img src="icons/play-icon.png"/>';
 		}
 	});
 
@@ -84,14 +83,14 @@ window.onload = function() {
 			video.muted = true;
 
 			// Update the button text
-			muteButton.innerHTML = '<img src="icons/volume-off-icon.png"/>';;
+			muteButton.innerHTML = '<img src="icons/volume-off-icon.png"/>';
 			volumeBar.value=0;
 		} else {
 			// Unmute the video
 			video.muted = false;
 
 			// Update the button text
-			muteButton.innerHTML = '<img src="icons/volume-on-icon.png"/>';;
+			muteButton.innerHTML = '<img src="icons/volume-on-icon.png"/>';
 			volumeBar.value=100;
 		}
 	});
@@ -115,10 +114,10 @@ window.onload = function() {
 		// Update the video volume
 		video.volume = volumeBar.value;
 		if (volumeBar.value==1) {
-			muteButton.innerHTML = '<img src="icons/volume-on-icon.png"/>';;
+			muteButton.innerHTML = '<img src="icons/volume-on-icon.png"/>';
 		}
 		if (volumeBar.value==0) {
-			muteButton.innerHTML = '<img src="icons/volume-off-icon.png"/>';;
+			muteButton.innerHTML = '<img src="icons/volume-off-icon.png"/>';
 		}
 	});
 
@@ -176,11 +175,11 @@ window.onload = function() {
      	var mode = video.textTracks[0].mode;
      	if (mode=='showing'){
         	video.textTracks[0].mode = 'hidden';
-        	subtitles.innerHTML = '<strike>CC</strike>';;
+        	subtitles.innerHTML = '<strike>CC</strike>';
      	}
      	else {
      		video.textTracks[0].mode='showing';
-     		subtitles.innerHTML = 'CC';;
+     		subtitles.innerHTML = 'CC';
      	}
 		});
 
@@ -188,11 +187,11 @@ window.onload = function() {
      	var normalSpeed = video.playbackRate;
      	if (normalSpeed==1){
         	video.playbackRate = 1.5;
-        	speed.innerHTML = '1.5x';;
+        	speed.innerHTML = '1.5x';
      	}
      	else {
      		video.playbackRate = 1;
-     		speed.innerHTML = 'Normal';;
+     		speed.innerHTML = 'Normal';
      	}
 		});
 
@@ -227,4 +226,4 @@ window.onload = function() {
 	// Function calls
 	prep_transcript();
 
-}
+};
