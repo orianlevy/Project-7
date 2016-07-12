@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Orian Levy Video Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:700,300' rel='stylesheet' type='text/css'>
+  </head>
+
+  <body>
+
+    <div id="container">
+      <div class="video-container">
+       <video class="video" id="video"> 
+          <source src="video/video.mp4" type="video/mp4">
+           <source src="video/video.ogg" type="video/ogg">
+          <track label="English" kind="subtitles" srclang="en" src="video/captions.vtt" default=""></track>        
+      </video>
+        <progress id="progress-bar" value="0" max="100"></progress>
+        <progress id="buffer-bar" value="0" max="100"></progress>
+         <!-- Video Controls -->
+        <div class="video-controls" style="display: block;">
+          <div id="left-controls">  
+            <button type="button" id="play-pause">
+               <img src="icons/play-icon.png" alt="play">
+             </button>
+             <span id="time-display">
+             <span id="current-time">00:00</span> 
+             / 
+             <span id="duration">00:59</span></span>
+          </div>
+           <div id="right-controls"> 
+           <button type="button" id="playback-speed">Normal</button>
+           <button type="button" id="closed-caption">CC</button>
+            <button type="button" id="mute">
+              <img src="icons/volume-on-icon.png" alt="mute">
+            </button>
+            <input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1">
+            <button type="button" id="full-screen">
+             <img src="icons/fullscreen-icon.png" alt="mute">
+            </button>
+          </div>
+        </div>
+        </div>
+     
+      <div class="text-container" id="transcript">
+
+      </div>
+    </div> <!-- container -->
+    <script src="script.js"></script>
+  </body>
+</html>

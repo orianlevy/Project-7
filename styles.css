@@ -1,0 +1,212 @@
+* {
+  box-sizing: border-box; }
+
+#container{
+	margin: 0 auto;
+	max-width: 1024px;
+}
+
+body {
+
+	font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1em;
+    line-height: 1.5;
+    background-image: url("images/blue.jpg");
+}
+
+.video-container {
+  	margin-top: 10px;
+	position: relative;
+	overflow: hidden;
+  }
+
+
+.video {
+	width: 100%
+}	
+
+.video-controls {
+	display: none;
+	transition: all 0.3s ease-in;
+	position: absolute;
+	background: rgba(0, 0, 0, 0.3);
+	/*background: rgba(0, 0, 0, 1);*/
+	color: #fff;
+	width: 100%;
+	height: 33px;
+}
+
+.video-container:hover .video-controls {
+	opacity: .9;
+	transform: translateY(-39px);
+	-webkit-transform: translateY(-39px);
+    -o-transform: translateY(-39px); 
+    -moz-transform: translateY(-39px);
+    -ms-transform: translateY(-39px);
+}
+
+
+button {
+	background: transparent;
+	border: none;
+	display: inline;
+	color: white;
+}
+
+button img {
+	vertical-align: middle;
+	width: 1.2em;
+
+}
+
+button:focus,
+input:focus {
+	outline: 0;
+}
+
+
+
+
+#left-controls, 
+#right-controls {
+	height: 100%;
+}
+
+#left-controls {
+	float: left;
+}
+
+#right-controls {
+	float: right;
+}
+
+#volume-bar,
+#play-pause,
+#time-display,
+#playback-speed,
+#closed-caption,
+#mute,
+#full-screen {
+	vertical-align: middle;
+}
+
+#play-pause {
+	margin-left: 5px;
+}
+
+
+
+
+/* PROGRESS AND BUFFER BARS */
+
+progress[value] {
+	cursor: pointer;
+
+	/* Reset the default appearance */
+	-webkit-appearance: none;
+    -moz-appearance: none;
+	height: 10px;
+
+	/* Get rid of default border in Firefox. */
+	border: none;
+
+}
+
+/* the container */
+progress[value]::-webkit-progress-bar {
+	border-radius: 0px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15) inset;
+	background-color: rgba(255, 255, 255, 0.15);
+}
+
+#progress-bar,
+#buffer-bar {
+	transition: all 0.3s ease-in;
+	position: absolute;
+	display:block;
+	width:100%;
+	bottom: 6px;
+}
+
+#progress-bar {
+	z-index: 2;
+}
+
+.video-container:hover #progress-bar,
+.video-container:hover #buffer-bar {
+	transform: translateY(-33px);
+	-webkit-transform: translateY(-33px);
+    -o-transform: translateY(-33px); 
+    -moz-transform: translateY(-33px);
+    -ms-transform: translateY(-33px);
+}
+
+#progress-bar::-webkit-progress-value {
+	background-color: DodgerBlue;
+}
+
+#buffer-bar::-webkit-progress-value {
+	background-color: rgba(255, 255, 255, 0.25);
+}
+
+#transcript span {
+	cursor: pointer;
+	transition: all 0.1s ease-in;
+}
+
+#transcript span:hover {
+	color: red;
+}
+
+.highlight {
+	color: DarkSlateBlue;
+	background-color: WhiteSmoke;
+}
+
+
+/* MEDIA QUERIES */
+
+/* Mobile screens */
+@media screen and (max-width: 435px) {
+	/*Smaller size in general*/
+	body {
+		font-size: 0.8em;
+	}
+
+	.video-controls {
+		height: 24px;
+	}
+
+	.video-container:hover .video-controls {
+		opacity: .9;
+		transform: translateY(-30px);
+		-webkit-transform: translateY(-30px);
+	    -o-transform: translateY(-30px); 
+	    -moz-transform: translateY(-30px);
+	    -ms-transform: translateY(-30px);
+	}
+
+	.video-container:hover #progress-bar,
+	.video-container:hover #buffer-bar {
+		transform: translateY(-25px);
+		-webkit-transform: translateY(-25px);
+	    -o-transform: translateY(-25px); 
+	    -moz-transform: translateY(-25px);
+	    -ms-transform: translateY(-25px);
+	}
+
+	progress[value] {
+		height: 5px;
+	}
+
+	#progress-bar,
+	#buffer-bar {
+		bottom: 5px;
+	}
+
+	#volume-bar,
+	#mute {
+		display: none;
+	}
+
+}
